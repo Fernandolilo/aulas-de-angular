@@ -26,3 +26,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # aulas-de-angular
+
+
+falando de angular iniciando com um boa pratica, limpando o cod,
+ trazendo o   template: '<router-outlet></router-outlet>'  para app.component e eliminando o html, scss, e spec do component inicial.
+ 
+
+iniciando com o siclo de vida no Angular
+ngOnInit
+
+ ngOnInit(): void {
+    setTimeout(() => {
+      console.log(1)
+    }, 5000)
+  }
+
+  este pequeno trecho de cod, vai esperar o angular iniciar, apos seu inicio depois de 5 segundo trara o console.log(1)
