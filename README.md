@@ -64,3 +64,70 @@ ao carrega a view vai atualizar o dado com o dado que esta vindo de fora com o O
 })
 export class AppComponent {
 }
+
+analizando o siclo de vida do angular 
+
+@Component({
+  selector: 'app-root',
+  template: `
+ <!-- <app-title title="Olá Mundo"></app-title> -->
+
+  {{ valor }}
+  <button (click)="addicionar()">adicionar</button>
+  <router-outlet></router-outlet>`
+})
+export class AppComponent implements OnInit, DoCheck, AfterContentChecked, AfterContentInit, AfterViewInit, AfterViewChecked {
+
+  public valor: number = 1;
+
+  public addicionar(): number {
+    return this.valor += 1;
+  }
+  ngOnInit(): void { }
+
+  ngDoCheck(): void {
+    console.log("ngDocheck")
+  }
+
+  ngAfterContentInit(): void {
+    console.log("ngAfterContentInit")
+  }
+
+  ngAfterContentChecked(): void {
+    console.log("ngAfterContentChecked")
+  }
+
+  ngAfterViewInit(): void {
+    console.log("ngDocngAfterViewInitheck")
+  }
+
+
+  ngAfterViewChecked(): void {
+    console.log("ngAfterViewChecked")
+  }
+
+}
+
+ao criar o valor e passar uma função para o botão add, 
+chamaremos tres components do siclo de vida do angular, sendo eles:
+
+ngDocheck
+ngAfterContentChecked
+ngAfterViewChecked
+
+para isto criamos 
+ interpoletion: {{ valor }}
+
+ e a função para add dentro do butão adicionar; 
+  <button (click)="addicionar()">adicionar</button>
+
+  public addicionar(): number {
+    return this.valor += 1;
+  }
+
+execultando algo dentro desta função termos o siclo de vida conforme já citado a cima!
+veja quais:
+
+ngDocheck
+ngAfterContentChecked
+ngAfterViewChecked
