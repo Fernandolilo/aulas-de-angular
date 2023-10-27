@@ -42,3 +42,25 @@ ngOnInit
   }
 
   este pequeno trecho de cod, vai esperar o angular iniciar, apos seu inicio depois de 5 segundo trara o console.log(1)
+
+  proximo commit vai falar do ngOnChange e seu siclo quando é chamado.
+
+  ex: 
+
+dentro do AppComponent chamando um app-title e ao chamar ele passamos um dado de fora 
+veja a baixo.
+
+
+no title temos a informção de  @Input() public title : string= 'Bem vindo'; bem vindo com o input.
+ao carrega a view vai atualizar o dado com o dado que esta vindo de fora com o Olá mundo dentro de
+
+ <app-title title="Olá Mundo"></app-title>
+
+  @Component({
+  selector: 'app-root',
+  template: `
+  <app-title title="Olá Mundo"></app-title>
+  <router-outlet></router-outlet>`
+})
+export class AppComponent {
+}
